@@ -14,7 +14,6 @@ CORS(app)
 
 MURF_API_KEY = os.getenv("MURF_API_KEY")
 client = genai.Client(api_key=os.getenv("GENAI_API_KEY"))
-
 PROMPTS = {
     "Summary": """
 You are a professional tourist guide.
@@ -115,4 +114,5 @@ def generate_audio_guide():
         "audioBase64": encoded_audio
                 }
 
-app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)
